@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class KorttiPakka {
 
+
     private ArrayList<Kortti> kortit;
     Scanner lukija = new Scanner(System.in);
 
@@ -85,13 +86,24 @@ public class KorttiPakka {
             case ASSA:
                 if (kaytaTekoAlya) {
                     if (kortti.getOikeaArvo() > 10) {
+
                        kortti.setOikeaArvo(1);
                     } else 
                     // TODO: tekoäly
 
                     kortti.setOikeaArvo(11);
              
-                  
+
+
+                kortti.setOikeaArvo(14);
+                
+
+                        kortti.setOikeaArvo(1);
+                    } else // TODO: tekoäly
+                    {
+                        kortti.setOikeaArvo(11);
+                    }
+
                 } else {
                     System.out.println("Sait ässän, haluatko sen olevan arvoltaan (1) 1 vai (2) 11?");
                     int vastaus = lukija.nextInt();
@@ -106,6 +118,18 @@ public class KorttiPakka {
         }
 
         this.kortit.add(kortti);
+
+    int pakanKoko() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    String kortinArvo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void onkoBlackJack() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     }
 
     @Override

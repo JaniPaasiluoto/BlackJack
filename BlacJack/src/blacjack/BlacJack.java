@@ -13,7 +13,8 @@ public class BlacJack {
         System.out.println("SÄÄNNÖT\n Pelissä on normaali, 52:n kortin pakka ilman jokereita."
                 + " Blackjackissa yrität saada korteillasi suuremman pistesumman kuin jakaja. "
                 + " Pistesumman tulee olla mahdollisimman lähelle 21, mutta ei kuitenkaan yli."
-                + " Pelin alussa jaetaan kaksi korttia sekä pelaajalle että jakajalle.\n");
+                + " Pelin alussa jaetaan kaksi korttia sekä pelaajalle että jakajalle."
+                + " Korttien summan mukaan saat päättää, haluatko jatkaa vai lopettaa pelaamisen.\n");
 
         boolean lopetaVuoro = false;
 
@@ -21,7 +22,7 @@ public class BlacJack {
         KorttiPakka emannanPakka = new KorttiPakka();
 
         while (true) {
-            System.out.println("Valitse:  \n 1. Uusi peli \n 2. Lopeta peli");
+            System.out.println("Valitse:  \n 1. Uusi peli \n 2. En halua pelata");
             int valinta = lukija.nextInt();
             if (valinta == 1) {
                 System.out.println("Aloitetaan Black Jack!");
@@ -32,9 +33,11 @@ public class BlacJack {
                 peliPakka.luoPakka();
                 peliPakka.Sekoita();
             } else if (valinta == 2) {
+                System.out.println("Seuraavaan kertaan!");
                 break;
+                
+                
             }
-
             pelaajanPakka.jaa(peliPakka, false);
             System.out.println("Sait: ");
             System.out.println(pelaajanPakka.otaKortti(pelaajanPakka.pakanKoko() - 1).toString());
@@ -67,7 +70,7 @@ public class BlacJack {
 
             }
             System.out.println("Emännän vuoro!");
-            while (emannanPakka.kortinArvo() < pelaajanPakka.kortinArvo() && emannanPakka.kortinArvo() < 22 && pelaajanPakka.kortinArvo() < 22) {
+            while (emannanPakka.kortinArvo() < pelaajanPakka.kortinArvo() && emannanPakka.kortinArvo() < 15 && pelaajanPakka.kortinArvo() < 22) {
                 emannanPakka.jaa(peliPakka, true);
                 Thread.sleep(1500);
                 System.out.println("Emäntä sai: ");
