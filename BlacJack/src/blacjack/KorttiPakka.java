@@ -5,11 +5,7 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class KorttiPakka {
-<<<<<<< Updated upstream
-    
-=======
 
->>>>>>> Stashed changes
     private ArrayList<Kortti> kortit;
     Scanner lukija = new Scanner(System.in);
 
@@ -89,24 +85,13 @@ public class KorttiPakka {
             case ASSA:
                 if (kaytaTekoAlya) {
                     if (kortti.getOikeaArvo() > 10) {
-<<<<<<< Updated upstream
                        kortti.setOikeaArvo(1);
                     } else 
                     // TODO: tekoäly
 
-                    
                     kortti.setOikeaArvo(11);
              
-
-                kortti.setOikeaArvo(14);
-                
-=======
-                        kortti.setOikeaArvo(1);
-                    } else // TODO: tekoäly
-                    {
-                        kortti.setOikeaArvo(11);
-                    }
->>>>>>> Stashed changes
+                  
                 } else {
                     System.out.println("Sait ässän, haluatko sen olevan arvoltaan (1) 1 vai (2) 11?");
                     int vastaus = lukija.nextInt();
