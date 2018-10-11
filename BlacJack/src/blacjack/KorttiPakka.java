@@ -67,19 +67,19 @@ public class KorttiPakka {
                 kortti.setOikeaArvo(10);
                 break;
             case JATKA:
-                kortti.setOikeaArvo(11);
+                kortti.setOikeaArvo(10);
                 break;
             case KUNINGATAR:
-                kortti.setOikeaArvo(12);
+                kortti.setOikeaArvo(10);
                 break;
             case KUNINGAS:
-                kortti.setOikeaArvo(13);
+                kortti.setOikeaArvo(10);
                 break;
             case ASSA:
                 if (kaytaTekoAlya) {
                     // TODO: tekoäly
                     
-                    kortti.setOikeaArvo(14);
+                    kortti.setOikeaArvo(11);
                 } else {
                     System.out.println("Haluatko ässän olevan arvoltaan (1) 1 vai (2) 14?");
                     int vastaus = lukija.nextInt();

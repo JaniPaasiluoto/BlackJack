@@ -1,8 +1,6 @@
-
 package blacjack;
 
 import java.util.Scanner;
-
 
 public class BlacJack {
 
@@ -15,10 +13,10 @@ public class BlacJack {
         System.out.println("SÄÄNNÖT\n Pelissä on normaali, 52:n kortin pakka ilman jokereita."
                 + " Blackjackissa yrität saada korteillasi suuremman pistesumman kuin jakaja. "
                 + " Pistesumman tulee olla mahdollisimman lähelle 21, mutta ei kuitenkaan yli."
-                + " Menit yli 21: Häviät automaattisesti.\n" 
-                + " Jakaja meni yli 21: Sinä voitat automaattisesti.\n" 
-                + " Kumpikaan ei mene yli ja sinulla on suurempi summa kuin jakajalla: Voitat.\n" 
-                + " Kumpikaan ei mene yli ja sinulla on pienempi summa kuin jakajalla: Häviät.\n" 
+                + " Menit yli 21: Häviät automaattisesti.\n"
+                + " Jakaja meni yli 21: Sinä voitat automaattisesti.\n"
+                + " Kumpikaan ei mene yli ja sinulla on suurempi summa kuin jakajalla: Voitat.\n"
+                + " Kumpikaan ei mene yli ja sinulla on pienempi summa kuin jakajalla: Häviät.\n"
                 + " Sinulla ja jakajalla on tasatilanne: Tasapeli, saat panoksen takaisin.\n");
 
         boolean lopetaVuoro = false;
@@ -34,12 +32,18 @@ public class BlacJack {
                 peliPakka.tyhjennaPakka();
                 pelaajanPakka.tyhjennaPakka();
                 emannanPakka.tyhjennaPakka();
-                
+
                 peliPakka.luoPakka();
                 peliPakka.Sekoita();
             } else if (valinta == 2) {
                 break;
             }
+            pelaajanPakka.jaa(peliPakka, false);
+            System.out.println("Sait: ");
+            System.out.println(pelaajanPakka.otaKortti(pelaajanPakka.pakanKoko() - 1).toString());
+            pelaajanPakka.jaa(peliPakka, false);
+            System.out.println(pelaajanPakka.otaKortti(pelaajanPakka.pakanKoko() - 1).toString());
+            System.out.println("Korttiesi yhteisarvo on: " + pelaajanPakka.kortinArvo());
 
             while (true) {
 
