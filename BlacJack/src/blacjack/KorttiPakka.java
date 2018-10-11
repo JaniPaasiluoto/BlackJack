@@ -1,21 +1,26 @@
-
 package blacjack;
-
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
+
 public class KorttiPakka {
+<<<<<<< Updated upstream
     
+=======
+
+>>>>>>> Stashed changes
     private ArrayList<Kortti> kortit;
     Scanner lukija = new Scanner(System.in);
+
     public KorttiPakka() {
         this.kortit = new ArrayList<>();
     }
-    
+
     public void tyhjennaPakka() {
         this.kortit = new ArrayList<>();
     }
+
     public void luoPakka() {
         for (Maa kortinMaa : Maa.values()) {
             for (Arvo kortinArvo : Arvo.values()) {
@@ -23,18 +28,23 @@ public class KorttiPakka {
             }
         }
     }
+
     public void Sekoita() {
         Collections.shuffle(kortit);
     }
+
     public void poistaKortti(int i) {
         this.kortit.remove(i);
     }
+
     public Kortti otaKortti(int i) {
         return this.kortit.get(i);
     }
+
     public void lisaaKortti(Kortti lisaaKortti) {
         this.kortit.add(lisaaKortti);
     }
+
     public void jaa(KorttiPakka mista, boolean kaytaTekoAlya) {
         Kortti kortti = mista.otaKortti(0);
         mista.poistaKortti(0);
@@ -68,17 +78,18 @@ public class KorttiPakka {
                 kortti.setOikeaArvo(10);
                 break;
             case JATKA:
-                kortti.setOikeaArvo(11);
+                kortti.setOikeaArvo(10);
                 break;
             case KUNINGATAR:
-                kortti.setOikeaArvo(12);
+                kortti.setOikeaArvo(10);
                 break;
             case KUNINGAS:
-                kortti.setOikeaArvo(13);
+                kortti.setOikeaArvo(10);
                 break;
-            case ASSA: assat += 1;
+            case ASSA:
                 if (kaytaTekoAlya) {
                     if (kortti.getOikeaArvo() > 10) {
+<<<<<<< Updated upstream
                        kortti.setOikeaArvo(1);
                     } else 
                     // TODO: tekoäly
@@ -89,21 +100,29 @@ public class KorttiPakka {
 
                 kortti.setOikeaArvo(14);
                 
+=======
+                        kortti.setOikeaArvo(1);
+                    } else // TODO: tekoäly
+                    {
+                        kortti.setOikeaArvo(11);
+                    }
+>>>>>>> Stashed changes
                 } else {
                     System.out.println("Sait ässän, haluatko sen olevan arvoltaan (1) 1 vai (2) 11?");
                     int vastaus = lukija.nextInt();
                     if (vastaus == 1) {
                         kortti.setOikeaArvo(1);
-                    } else if (vastaus == 2){
+                    } else if (vastaus == 2) {
                         kortti.setOikeaArvo(11);
                     }
-                    
+
                     break;
                 }
         }
-        
+
         this.kortit.add(kortti);
     }
+
     @Override
     public String toString() {
         String korttiLista = "";
@@ -112,9 +131,11 @@ public class KorttiPakka {
         }
         return korttiLista;
     }
+
     public int pakanKoko() {
         return this.kortit.size();
     }
+
     public void siirraPakkaan(KorttiPakka siirra) {
         int tamanPakanKoko = this.kortit.size();
         for (int i = 0; i < this.pakanKoko(); i++) {
@@ -124,16 +145,28 @@ public class KorttiPakka {
             this.poistaKortti(0);
         }
     }
+
     public int kortinArvo() {
         int yht = 0;
-        
+
         for (Kortti kortti : this.kortit) {
             yht += kortti.getOikeaArvo();
         }
-        
+
         return yht;
-        
+
     }
+
+    public void onkoBlackJack() {
+        while (true) {
+            if (this.kortinArvo() == 21) {
+                System.out.println("Sait Black Jackin, mahtavaa!");
+
+            }
+            break;
+        }
+    }
+
     void jaa(KorttiPakka peliPakka) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

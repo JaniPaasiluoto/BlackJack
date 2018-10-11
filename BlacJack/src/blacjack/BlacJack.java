@@ -41,7 +41,7 @@ public class BlacJack {
             pelaajanPakka.jaa(peliPakka, false);
             System.out.println(pelaajanPakka.otaKortti(pelaajanPakka.pakanKoko() - 1).toString());
             System.out.println("Korttiesi yhteisarvo on: " + pelaajanPakka.kortinArvo());
-            
+            pelaajanPakka.onkoBlackJack();
 
 
             while (true) {
@@ -81,7 +81,7 @@ public class BlacJack {
                 System.out.println("Emäntä voittaa!");
             } else if (pelaajanPakka.kortinArvo() > 21 && emannanPakka.kortinArvo() < 22) {
                 System.out.println("Emäntä voittaa!");
-            } else if (emannanPakka.kortinArvo() > 21 && lopetaVuoro == false) {
+            } else if (emannanPakka.kortinArvo() > 21) {
                 System.out.println("Emäntä menee yli, sinä voitat!");
                 lopetaVuoro = true;
 
