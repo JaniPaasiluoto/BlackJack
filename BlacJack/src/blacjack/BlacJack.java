@@ -13,10 +13,13 @@ public class BlacJack {
         KorttiPakka peliPakka = new KorttiPakka();
 
         System.out.println("SÄÄNNÖT\n Pelissä on normaali, 52:n kortin pakka ilman jokereita."
-                + " Tarkoituksena on päästä mahdollisimman lähelle lukua 21 menemättä sen yli."
-                + " Kortit antavat luvun pistemäärän, kuvakortit\n seuraavasti: Jätkä = 11, Kuningatar = 12, Kuningas = 13, Ässä = 1/14"
-                + " Pelaaja pelaa ensin korttinsa ja päättää jokaisen kortin jälkeen haluaako ottaa lisäkortin vai jäädä \n sen hetkiseen summaan."
-                + " Kun pelaaja lopettaa, pelaa Emäntä oman kätensä. Lähemmäksi lukua 21 päässyt voittaa. Tasalukua 21 kutsutaan ventiksi.\n");
+                + " Blackjackissa yrität saada korteillasi suuremman pistesumman kuin jakaja. "
+                + " Pistesumman tulee olla mahdollisimman lähelle 21, mutta ei kuitenkaan yli."
+                + " Menit yli 21: Häviät automaattisesti.\n" 
+                + " Jakaja meni yli 21: Sinä voitat automaattisesti.\n" 
+                + " Kumpikaan ei mene yli ja sinulla on suurempi summa kuin jakajalla: Voitat.\n" 
+                + " Kumpikaan ei mene yli ja sinulla on pienempi summa kuin jakajalla: Häviät.\n" 
+                + " Sinulla ja jakajalla on tasatilanne: Tasapeli, saat panoksen takaisin..\n");
 
         boolean lopetaVuoro = false;
 
