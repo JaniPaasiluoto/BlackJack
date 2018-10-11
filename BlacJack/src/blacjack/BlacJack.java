@@ -8,7 +8,7 @@ public class BlacJack {
 
     public static void main(String[] args) throws InterruptedException {
         Scanner lukija = new Scanner(System.in);
-        System.out.println("Tervetuloa pelaamaan Venttiä!\n");
+        System.out.println("Tervetuloa pelaamaan Black Jackia!\n");
 
         KorttiPakka peliPakka = new KorttiPakka();
 
@@ -19,7 +19,7 @@ public class BlacJack {
                 + " Jakaja meni yli 21: Sinä voitat automaattisesti.\n" 
                 + " Kumpikaan ei mene yli ja sinulla on suurempi summa kuin jakajalla: Voitat.\n" 
                 + " Kumpikaan ei mene yli ja sinulla on pienempi summa kuin jakajalla: Häviät.\n" 
-                + " Sinulla ja jakajalla on tasatilanne: Tasapeli, saat panoksen takaisin..\n");
+                + " Sinulla ja jakajalla on tasatilanne: Tasapeli, saat panoksen takaisin.\n");
 
         boolean lopetaVuoro = false;
 
@@ -30,7 +30,7 @@ public class BlacJack {
             System.out.println("Valitse:  \n 1. Uusi peli \n 2. Lopeta peli");
             int valinta = lukija.nextInt();
             if (valinta == 1) {
-                System.out.println("Aloitetaan peli!");
+                System.out.println("Aloitetaan Black Jack!");
                 peliPakka.tyhjennaPakka();
                 pelaajanPakka.tyhjennaPakka();
                 emannanPakka.tyhjennaPakka();
