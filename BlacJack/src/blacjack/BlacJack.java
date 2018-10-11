@@ -13,11 +13,7 @@ public class BlacJack {
         System.out.println("SÄÄNNÖT\n Pelissä on normaali, 52:n kortin pakka ilman jokereita."
                 + " Blackjackissa yrität saada korteillasi suuremman pistesumman kuin jakaja. "
                 + " Pistesumman tulee olla mahdollisimman lähelle 21, mutta ei kuitenkaan yli."
-                + " Menit yli 21: Häviät automaattisesti.\n"
-                + " Jakaja meni yli 21: Sinä voitat automaattisesti.\n"
-                + " Kumpikaan ei mene yli ja sinulla on suurempi summa kuin jakajalla: Voitat.\n"
-                + " Kumpikaan ei mene yli ja sinulla on pienempi summa kuin jakajalla: Häviät.\n"
-                + " Sinulla ja jakajalla on tasatilanne: Tasapeli, saat panoksen takaisin.\n");
+                + " Pelin alussa jaetaan kaksi korttia sekä pelaajalle että jakajalle.\n");
 
         boolean lopetaVuoro = false;
 
@@ -38,6 +34,7 @@ public class BlacJack {
             } else if (valinta == 2) {
                 break;
             }
+
             pelaajanPakka.jaa(peliPakka, false);
             System.out.println("Sait: ");
             System.out.println(pelaajanPakka.otaKortti(pelaajanPakka.pakanKoko() - 1).toString());
@@ -45,6 +42,7 @@ public class BlacJack {
             System.out.println(pelaajanPakka.otaKortti(pelaajanPakka.pakanKoko() - 1).toString());
             System.out.println("Korttiesi yhteisarvo on: " + pelaajanPakka.kortinArvo());
             
+
 
             while (true) {
 
@@ -75,6 +73,7 @@ public class BlacJack {
                 System.out.println("Emäntä sai: ");
                 System.out.println(emannanPakka.otaKortti(emannanPakka.pakanKoko() - 1).toString());
                 System.out.println("Emännän korttien yhteisarvo on: " + emannanPakka.kortinArvo());
+               
             }
             if (emannanPakka.kortinArvo() > pelaajanPakka.kortinArvo() && emannanPakka.kortinArvo() <= 21) {
                 System.out.println("Emäntä voittaa!");
@@ -90,7 +89,7 @@ public class BlacJack {
                 System.out.println("Tasapeli!");
                 lopetaVuoro = true;
             } else if (pelaajanPakka.kortinArvo() > emannanPakka.kortinArvo() && lopetaVuoro == false) {
-                System.out.println("Sinä voitat!");
+                
             }
 
         }

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 public class KorttiPakka {
+    
     private ArrayList<Kortti> kortit;
     Scanner lukija = new Scanner(System.in);
     public KorttiPakka() {
@@ -81,10 +82,15 @@ public class KorttiPakka {
                        kortti.setOikeaArvo(1);
                     } else 
                     // TODO: tekoäly
+
                     
                     kortti.setOikeaArvo(11);
+             
+
+                kortti.setOikeaArvo(14);
+                
                 } else {
-                    System.out.println("Haluatko ässän olevan arvoltaan (1) 1 vai (2) 11?");
+                    System.out.println("Sait ässän, haluatko sen olevan arvoltaan (1) 1 vai (2) 11?");
                     int vastaus = lukija.nextInt();
                     if (vastaus == 1) {
                         kortti.setOikeaArvo(1);
