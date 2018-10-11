@@ -21,7 +21,7 @@ public class KorttiPakka {
     public void luoPakka() {
         for (Maa kortinMaa : Maa.values()) {
             for (Arvo kortinArvo : Arvo.values()) {
-                this.kortit.add(new Kortti(kortinMaa, kortinArvo));
+                boolean add = this.kortit.add(new Kortti(kortinMaa, kortinArvo));
             }
         }
     }
@@ -92,18 +92,7 @@ public class KorttiPakka {
                     // TODO: tekoäly
 
                     kortti.setOikeaArvo(11);
-             
-
-
-                kortti.setOikeaArvo(14);
-                
-
-                        kortti.setOikeaArvo(1);
-                    } else // TODO: tekoäly
-                    {
-                        kortti.setOikeaArvo(11);
-                    }
-
+     
                 } else {
                     System.out.println("Sait ässän, haluatko sen olevan arvoltaan (1) 1 vai (2) 11?");
                     int vastaus = lukija.nextInt();
@@ -118,18 +107,6 @@ public class KorttiPakka {
         }
 
         this.kortit.add(kortti);
-
-    int pakanKoko() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    String kortinArvo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void onkoBlackJack() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     }
 
     @Override

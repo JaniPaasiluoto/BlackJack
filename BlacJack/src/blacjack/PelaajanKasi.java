@@ -9,5 +9,8 @@ public class PelaajanKasi {
         this.arvo = onkoBlackJack;
     }
     public void tarkistaBlackJack() {
+        
+    }
     
+
 }
