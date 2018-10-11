@@ -37,7 +37,7 @@ public class KorttiPakka {
     public void jaa(KorttiPakka mista, boolean kaytaTekoAlya) {
         Kortti kortti = mista.otaKortti(0);
         mista.poistaKortti(0);
-        
+        int assat = 0;
         switch (kortti.getArvo()) {
             case KAKSI:
                 kortti.setOikeaArvo(2);
@@ -67,26 +67,29 @@ public class KorttiPakka {
                 kortti.setOikeaArvo(10);
                 break;
             case JATKA:
-                kortti.setOikeaArvo(10);
+                kortti.setOikeaArvo(11);
                 break;
             case KUNINGATAR:
-                kortti.setOikeaArvo(10);
+                kortti.setOikeaArvo(12);
                 break;
             case KUNINGAS:
-                kortti.setOikeaArvo(10);
+                kortti.setOikeaArvo(13);
                 break;
-            case ASSA:
+            case ASSA: assat += 1;
                 if (kaytaTekoAlya) {
+                    if (kortti.getOikeaArvo() > 10) {
+                       kortti.setOikeaArvo(1);
+                    } else 
                     // TODO: tekoäly
                     
                     kortti.setOikeaArvo(11);
                 } else {
-                    System.out.println("Haluatko ässän olevan arvoltaan (1) 1 vai (2) 14?");
+                    System.out.println("Haluatko ässän olevan arvoltaan (1) 1 vai (2) 11?");
                     int vastaus = lukija.nextInt();
                     if (vastaus == 1) {
                         kortti.setOikeaArvo(1);
                     } else if (vastaus == 2){
-                        kortti.setOikeaArvo(14);
+                        kortti.setOikeaArvo(11);
                     }
                     
                     break;

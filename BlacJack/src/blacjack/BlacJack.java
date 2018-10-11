@@ -44,6 +44,7 @@ public class BlacJack {
             pelaajanPakka.jaa(peliPakka, false);
             System.out.println(pelaajanPakka.otaKortti(pelaajanPakka.pakanKoko() - 1).toString());
             System.out.println("Korttiesi yhteisarvo on: " + pelaajanPakka.kortinArvo());
+            
 
             while (true) {
 
